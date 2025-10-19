@@ -211,7 +211,10 @@ export const ModeSelector = ({
 					)}>
 					<div className="flex items-center gap-1 truncate">
 						{selectedMode?.icon && (
-							<span className={`codicon codicon-${selectedMode.icon} text-xs`} aria-hidden="true" />
+							<span
+								className={`codicon codicon-${selectedMode.icon} text-[11px] leading-none`}
+								aria-hidden="true"
+							/>
 						)}
 						<span className="truncate">{selectedMode?.name || ""}</span>
 					</div>
@@ -274,10 +277,10 @@ export const ModeSelector = ({
 											)}
 											data-testid="mode-selector-item">
 											<div className="flex-1 min-w-0">
-												<div className="font-bold truncate flex items-center gap-2">
+												<div className="font-bold truncate flex items-center gap-1">
 													{mode.icon && (
 														<span
-															className={`codicon codicon-${mode.icon} text-xs`}
+															className={`codicon codicon-${mode.icon} text-[11px] leading-none`}
 															aria-hidden="true"
 														/>
 													)}
