@@ -209,7 +209,12 @@ export const ModeSelector = ({
 							? "bg-primary opacity-90 hover:bg-primary-hover text-vscode-button-foreground"
 							: null,
 					)}>
-					<span className="truncate">{selectedMode?.name || ""}</span>
+					<div className="flex items-center gap-1 truncate">
+						{selectedMode?.icon && (
+							<span className={`codicon codicon-${selectedMode.icon} text-xs`} aria-hidden="true" />
+						)}
+						<span className="truncate">{selectedMode?.name || ""}</span>
+					</div>
 				</PopoverTrigger>
 			</StandardTooltip>
 			<PopoverContent
@@ -269,7 +274,15 @@ export const ModeSelector = ({
 											)}
 											data-testid="mode-selector-item">
 											<div className="flex-1 min-w-0">
-												<div className="font-bold truncate">{mode.name}</div>
+												<div className="font-bold truncate flex items-center gap-2">
+													{mode.icon && (
+														<span
+															className={`codicon codicon-${mode.icon} text-xs`}
+															aria-hidden="true"
+														/>
+													)}
+													<span className="truncate">{mode.name}</span>
+												</div>
 												{mode.description && (
 													<div className="text-xs text-vscode-descriptionForeground truncate">
 														{mode.description}
